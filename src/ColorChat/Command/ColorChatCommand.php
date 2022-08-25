@@ -18,6 +18,7 @@ class ColorChatCommand extends Command {
             if($data === null) return;
             Main::getPlayers()[$player->getName()] = $data;
         });
+        $form->setTitle(TextFormat::colorize("&l&b > ColorChat Selector < "));
         foreach(TextFormat::COLORS as $color => $format){
             $form->addButton($format."!Click to select¡", -1, "", $format);
         }
