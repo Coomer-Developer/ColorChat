@@ -1,0 +1,10 @@
+name: ColorChat
+version: 1.0.0
+main: ColorChat\Main
+api: 4.0.0
+author: Coomer-Developer
+
+permissions:
+  use.colorchat.command:
+    deafult: op
+    description: "ColorChat"
