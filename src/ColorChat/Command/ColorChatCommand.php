@@ -16,11 +16,12 @@ class ColorChatCommand extends Command {
         if(!$sender->hasPermission("use.colorchat.command") && !$sender->getServer()->isOp($sender->getName())) return;
         $form = new MenuForm(function (Player $player, $data){
             if($data === null) return;
-            Main::getPlayers()[$player->getName()] = $data;
+            Main::$players[$player->getName()] = $data;
+            $player->sendMessage(TextFormat::colorize("&7You Have Selected {$data}Color"));
         });
         $form->setTitle(TextFormat::colorize("&l&b > ColorChat Selector < "));
         foreach(TextFormat::COLORS as $color => $format){
-            $form->addButton($format."!Click to select¡", -1, "", $format);
+            $form->addButton(TextFormat::BOLD.$format."Click To Select", -1, "", $format);
         }
         $sender->sendForm($form);
     }

@@ -22,8 +22,4 @@ class Main extends PluginBase {
         return self::$plugin;
     }
 
-    public static function getPlayers(): array {
-        return self::$players;
-    }
-
 }
