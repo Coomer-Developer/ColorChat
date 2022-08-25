@@ -21,7 +21,7 @@ class ColorChatCommand extends Command {
         foreach(TextFormat::COLORS as $color => $format){
             $form->addButton($format."!Click to select¡", -1, "", $format);
         }
-        $form->sendToPLayer($sender);
+        $sender->sendForm($form);
     }
 
 }
