@@ -13,7 +13,7 @@ class ColorChatCommand extends Command {
 
     public function execute(CommandSender $sender, string $commandLabel, array $args){
         if(!$sender instanceof Player) return;
-        if(!$sender->hasPermission("use.colorchat.command")) return;
+        if(!$sender->hasPermission("use.colorchat.command") && !$sender->getServer()->isOp($sender->getName())) return;
         $form = new MenuForm(function (Player $player, $data){
             if($data === null) return;
             Main::getPlayers()[$player->getName()] = $data;
